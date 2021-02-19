@@ -1,5 +1,6 @@
 package ru.netology.data;
 
+import lombok.Data;
 import lombok.Value;
 import lombok.val;
 import org.apache.commons.dbutils.QueryRunner;
@@ -21,6 +22,21 @@ public class DataHelper {
     public static AuthInfo getAuthInfo() {
         return new AuthInfo("vasya", "qwerty123");
     }
+
+    @Value
+    @Data
+    public static class Card {
+        private String number;
+    }
+
+    public static Card getFirstCard() {
+        return new Card("5559 0000 0000 0001");
+    }
+
+    public static Card getSecondCard() {
+        return new Card("5559 0000 0000 0002");
+    }
+
 
     @Value
     public static class VerificationCode {
